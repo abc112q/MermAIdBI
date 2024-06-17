@@ -7,3 +7,7 @@
 - 由于AIGC的响应时间较长，基于自定义线程池+任务队列实现了AIGC的并发执行和异步化，提交任务后即可给出响应
 - 由于本地任务队列重启会丢失数据，使用RabbitMQ来接收并持久化任务消息，将图表生成与系统解耦，提高系统的可靠性
 - 通过消息队列的重试机制来处理AI生成失败的图表数据，并将重试仍然失败或超时的消息放入死信队列，便于人工处理
+
+  ![Image text](https://github.com/abc112q/mermAIdBI/edit/master/img/img.png)
+  ![Image text](https://github.com/abc112q/mermAIdBI/edit/master/img/img_1.png)
+  ![Image text](https://github.com/abc112q/mermAIdBI/edit/master/img/img_2.png)
