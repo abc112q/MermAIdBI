@@ -8,7 +8,7 @@
 - 由于本地任务队列重启会丢失数据，使用RabbitMQ来接收并持久化任务消息，将图表生成与系统解耦，提高系统的可靠性
 - 通过消息队列的重试机制来处理AI生成失败的图表数据，并将重试仍然失败或超时的消息放入死信队列，便于人工处理
 
-**项目预览图在img中**
-  ![Image text](https://github.com/abc112q/mermAIdBI/master/img/img.png)
-  ![Image text](https://github.com/abc112q/mermAIdBI/master/img/img_1.png)
-  ![Image text](https://github.com/abc112q/mermAIdBI/master/img/img_2.png)
+项目图
+  ![Image text](https://github.com/abc112q/mermAIdBI/blob/master/img/img.png)
+  ![Image text](https://github.com/abc112q/mermAIdBI/blob/master/img/img_1.png)
+  ![Image text](https://github.com/abc112q/mermAIdBI/blob/master/img/img_2.png)
