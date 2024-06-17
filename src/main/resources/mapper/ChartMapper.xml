@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aibi.springbootinit.mapper.ChartMapper">
+    <resultMap id="BaseResultMap" type="com.aibi.springbootinit.model.entity.Chart">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="userId" jdbcType="BIGINT"/>
+        <result property="goal" column="goal" jdbcType="VARCHAR"/>
+        <result property="chartType" column="chartType" jdbcType="VARCHAR"/>
+        <result property="chartData" column="chartData" jdbcType="VARCHAR"/>
+        <result property="genChart" column="genChart" jdbcType="VARCHAR"/>
+        <result property="gemResult" column="gemResult" jdbcType="VARCHAR"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+<!--    通用查询结果列,使用sql标签，可以将所有需要查询的字段封装在一个sql语句中，-->
+    <sql id="Base_Column_List">
+        id,userId,goal,
+        chartType,chartData,genChart,
+        gemResult,createTime,updateTime,isDelete,`name`
+    </sql>
+
+<!--    如果用$符号需要防止sql注入-->
+    <select id="queryChartData" parameterType="string" resultType="map"> ${querySql} </select>
+
+</mapper>
