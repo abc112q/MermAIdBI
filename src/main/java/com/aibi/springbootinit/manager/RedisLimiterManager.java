@@ -22,10 +22,12 @@ public class RedisLimiterManager {
     @Resource
     private RedissonClient redissonClient;
 
-    public void doRateLimit(String key){ //key用于区分不同的限流器，比如不同的用户id应该分别统计
+    public void doRateLimit(String key){ //key用于区分不同的限流器，这里使用不同的用户id应该分别统计
 
         //创建一个名称为user_limiter的限流器，每秒最多访问两次
         RRateLimiter rateLimiter=redissonClient.getRateLimiter(key);
+        //2：表示指定时间间隔内允许发起的请求次数
+        //1：表示指定的时间间隔
         rateLimiter.trySetRate(RateType.OVERALL,2,1, RateIntervalUnit.SECONDS);
 
         //每当来了一个操作后，请求一个令牌
